@@ -55,28 +55,29 @@ Uses streaming_response_generator for sending data incrementally in response han
 
 ## Documentation
 ## Key Functions and Classes
-### Decorators
+#### Decorators
 - log_request: Logs requests and responses.
 - authorize_request: Authorizes requests based on the HTTP_AUTHORIZATION header.
-### Generators
+#### Generators
 - streaming_response_generator: Yields parts of the response incrementally with a delay.
 Iterators
 - RequestIterator: Manages and iterates over multiple requests.
-### Coroutines & Async Iterators
+#### Coroutines & Async Iterators
 - async_request_handler: Handles multiple requests asynchronously.
 - BaseRequestHandler and Derived Classes
 - BaseRequestHandler: Abstract base class for handling requests.
 - GetRequestHandler: Handles GET requests.
 - PostRequestHandler: Handles POST requests.
-### Context Manager
+#### Context Manager
 - ServerContextManager: Manages the server's lifecycle.
-### Singleton Pattern
+#### Singleton Pattern
 - WebServer: Ensures a single instance of the web server.
 
 ## Example Requests
 The server handles the following example requests defined in WebServer.run method:
 
 requests = [
+
     {
         'REQUEST_METHOD': 'GET',
         'PATH_INFO': '/http/example.com',
@@ -97,12 +98,11 @@ requests = [
         'PATH_INFO': '/http/example.com',
         'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
     }
+    
 ]
 
 ## Output
 The server will log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
-
-
 
 https://github.com/user-attachments/assets/1146f66c-7023-4960-99fa-208ba3cda816
 

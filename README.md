@@ -44,34 +44,34 @@ Streaming Responses
 Uses streaming_response_generator for sending data incrementally in response handlers.
 
 ## How to Run the Server
-Prerequisites
-Python 3.7+
-asyncio
-unittest
+- Prerequisites
+- Python 3.7+
+- asyncio
+- unittest
 
 ## Dependencies
-Python 3.7+
-asyncio
+- Python 3.7+
+- asyncio
 
 ## Documentation
 ## Key Functions and Classes
-Decorators
-log_request: Logs requests and responses.
-authorize_request: Authorizes requests based on the HTTP_AUTHORIZATION header.
-Generators
-streaming_response_generator: Yields parts of the response incrementally with a delay.
+### Decorators
+- log_request: Logs requests and responses.
+- authorize_request: Authorizes requests based on the HTTP_AUTHORIZATION header.
+### Generators
+- streaming_response_generator: Yields parts of the response incrementally with a delay.
 Iterators
-RequestIterator: Manages and iterates over multiple requests.
-Coroutines & Async Iterators
-async_request_handler: Handles multiple requests asynchronously.
-BaseRequestHandler and Derived Classes
-BaseRequestHandler: Abstract base class for handling requests.
-GetRequestHandler: Handles GET requests.
-PostRequestHandler: Handles POST requests.
-Context Manager
-ServerContextManager: Manages the server's lifecycle.
-Singleton Pattern
-WebServer: Ensures a single instance of the web server.
+- RequestIterator: Manages and iterates over multiple requests.
+### Coroutines & Async Iterators
+- async_request_handler: Handles multiple requests asynchronously.
+- BaseRequestHandler and Derived Classes
+- BaseRequestHandler: Abstract base class for handling requests.
+- GetRequestHandler: Handles GET requests.
+- PostRequestHandler: Handles POST requests.
+### Context Manager
+- ServerContextManager: Manages the server's lifecycle.
+### Singleton Pattern
+- WebServer: Ensures a single instance of the web server.
 
 ## Example Requests
 The server handles the following example requests defined in WebServer.run method:

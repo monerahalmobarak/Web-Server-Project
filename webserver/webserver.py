@@ -56,7 +56,7 @@ class BaseRequestHandler(ABC):
 class GetRequestHandler(BaseRequestHandler):
     async def handle_request(self, request):
         logger.debug("GET request handled")
-        await asyncio.sleep(2)  # Changed to 2 seconds for testing
+        await asyncio.sleep(2)  
         if request['PATH_INFO'] == '/http/vrhvevnd.com':
             return '404 Not Found', [('Content-Type', 'text/html')], streaming_response_generator([b"\n\n", b"Page not found", b"\n\n", await read_file_async("not_found.html")])
         return '200 OK', [('Content-Type', 'text/html')], streaming_response_generator([b"\n\n", b"GET request successful", b"\n\n", await read_file_async("authorization.html")])
@@ -224,3 +224,68 @@ class TestWebServer(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# Other Way of Testing
+
+# Unit tests
+# class TestWebServer(unittest.TestCase):
+
+#     def setUp(self):
+#         self.loop = asyncio.get_event_loop()
+
+#     def test_read_file_async(self):
+#         file_path = "authorization.html"
+#         result = self.loop.run_until_complete(read_file_async(file_path))
+#         self.assertIsInstance(result, bytes)
+#         self.assertGreater(len(result), 0)
+
+#     def test_log_request_decorator(self):
+#         @log_request
+#         async def mock_request(request):
+#             return "mock_response"
+
+#         request = {"REQUEST_METHOD": "GET", "PATH_INFO": "/test", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}
+#         response = self.loop.run_until_complete(mock_request(request))
+#         self.assertEqual(response, "mock_response")
+
+#     def test_authorize_request_decorator(self):
+#         @authorize_request
+#         async def mock_request(request):
+#             return "mock_response"
+
+#         authorized_request = {"REQUEST_METHOD": "GET", "PATH_INFO": "/test", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}
+#         unauthorized_request = {"REQUEST_METHOD": "GET", "PATH_INFO": "/test", "HTTP_AUTHORIZATION": "Invalid"}
+
+#         authorized_response = self.loop.run_until_complete(mock_request(authorized_request))
+#         unauthorized_response = self.loop.run_until_complete(mock_request(unauthorized_request))
+
+#         self.assertEqual(authorized_response, "mock_response")
+#         self.assertEqual(unauthorized_response[0], '401 Unauthorized')
+
+#     def test_get_request_handler(self):
+#         handler = GetRequestHandler()
+#         request = {"REQUEST_METHOD": "GET", "PATH_INFO": "/http/example.com", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}
+#         response = self.loop.run_until_complete(handler.handle_request(request))
+#         self.assertEqual(response[0], '200 OK')
+
+#     def test_post_request_handler(self):
+#         handler = PostRequestHandler()
+#         request = {"REQUEST_METHOD": "POST", "PATH_INFO": "/http/example.com", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}
+#         response = self.loop.run_until_complete(handler.handle_request(request))
+#         self.assertEqual(response[0], '200 OK')
+
+#     def test_request_iterator(self):
+#         requests = [
+#             {"REQUEST_METHOD": "GET", "PATH_INFO": "/http/example.com", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="},
+#             {"REQUEST_METHOD": "POST", "PATH_INFO": "/http/example.com", "HTTP_AUTHORIZATION": "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}
+#         ]
+#         iterator = RequestIterator(requests)
+#         iterated_requests = [req for req in iterator]
+#         self.assertEqual(len(iterated_requests), 2)
+#         self.assertEqual(iterated_requests[0]['REQUEST_METHOD'], 'GET')
+#         self.assertEqual(iterated_requests[1]['REQUEST_METHOD'], 'POST')
+
+# if __name__ == "__main__":
+#     unittest.main()
+

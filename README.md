@@ -12,7 +12,7 @@ webserver/
 |-- authorization.html
 
 ## Files
-- webserver.py: Main implementation file containing the web server code.
+- 'webserver.py': Main implementation file containing the web server code.
 - unauthorization.html: HTML content to display when a request is unauthorized.
 - not_found.html: HTML content to display when a requested page is not found.
 - authorization.html: HTML content to display when a request is successfully authorized.

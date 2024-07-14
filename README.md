@@ -75,6 +75,7 @@ Iterators
 
 ## Example Requests
 The server handles the following example requests defined in WebServer.run method:
+
 requests = [
     {
         'REQUEST_METHOD': 'GET',
@@ -99,9 +100,7 @@ requests = [
 ]
 
 ## Output
-The server will 
-
-log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
+The server will log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
 
 
 

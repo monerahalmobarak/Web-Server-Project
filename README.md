@@ -9,7 +9,7 @@ webserver/
 ├── unauthorization.html
 ├── not_found.html
 ├── authorization.html
-├── README.md
+
 
 ## Files
 webserver.py: Main implementation file containing the web server code.

@@ -83,31 +83,30 @@ Iterators
 
 ## Example Requests
 The server handles the following example requests defined in WebServer.run method:
-
-requests = [
-
-    {
-        'REQUEST_METHOD': 'GET',
-        'PATH_INFO': '/http/example.com',
-        'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
-    },
-    {
-        'REQUEST_METHOD': 'GET',
-        'PATH_INFO': '/http/example2.com',
-        'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbW33U6cGFzc3dvcmQ='
-    },
-    {
-        'REQUEST_METHOD': 'GET',
-        'PATH_INFO': '/http/vrhvevnd.com',
-        'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
-    },
-    {
-        'REQUEST_METHOD': 'POST',
-        'PATH_INFO': '/http/example.com',
-        'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
-    }
     
-]
+    requests = [
+        {
+            'REQUEST_METHOD': 'GET',
+            'PATH_INFO': '/http/example.com',
+            'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
+        },
+        {
+            'REQUEST_METHOD': 'GET',
+            'PATH_INFO': '/http/example2.com',
+            'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbW33U6cGFzc3dvcmQ='
+        },
+        {
+            'REQUEST_METHOD': 'GET',
+            'PATH_INFO': '/http/vrhvevnd.com',
+            'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
+        },
+        {
+            'REQUEST_METHOD': 'POST',
+            'PATH_INFO': '/http/example.com',
+            'HTTP_AUTHORIZATION': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ='
+        }
+        
+    ]
 
 ## Output
 The server will log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.

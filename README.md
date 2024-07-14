@@ -85,6 +85,7 @@ Iterators
 The server handles the following example requests defined in WebServer.run method:
 
 requests = [
+
     {
         'REQUEST_METHOD': 'GET',
         'PATH_INFO': '/http/example.com',

@@ -104,6 +104,9 @@ The server will
 log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
 
 
-https://github.com/user-attachments/assets/22cdb2d3-995d-48ae-9a83-cb0d3b89303a
+
+https://github.com/user-attachments/assets/1146f66c-7023-4960-99fa-208ba3cda816
+
+
 
 

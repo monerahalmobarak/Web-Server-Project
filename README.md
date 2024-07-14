@@ -55,9 +55,7 @@ Streaming Responses
 - Python 3.7+
 - asyncio
 
-## Documentation
-
-## Key Functions and Classes
+## Documentation of The Key Functions and Classes
 
 #### Decorators
 - log_request: Logs requests and responses.

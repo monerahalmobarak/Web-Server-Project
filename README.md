@@ -99,4 +99,11 @@ requests = [
 ]
 
 ## Output
-The server will log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
+The server will 
+
+log and print responses for each request, showing the HTTP responses.and the appropriate HTML content.
+
+
+https://github.com/user-attachments/assets/22cdb2d3-995d-48ae-9a83-cb0d3b89303a
+
+
